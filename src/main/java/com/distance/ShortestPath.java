@@ -96,7 +96,6 @@ public class ShortestPath {
 
         // Exit case, if there are no more options to evaluate (last node)
         if (length == 0) {
-        	counter=0;
             // Both results, numerical distances and paths to those distances, are stored
             paths[counter] = path + "0";
             finalResults[counter] = costUntilHere + distances[initial][0];
