@@ -1,4 +1,4 @@
-package com.distance;
+package com.distance.service;
 
 import java.io.*;
 import java.util.Scanner;
