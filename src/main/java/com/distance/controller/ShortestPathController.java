@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.distance.modal.Path;
+import com.distance.modal.Request;
 import com.distance.repository.RequestRepo;
 import com.distance.service.ShortestPath;
 import com.mongodb.MongoException;
@@ -25,7 +25,7 @@ public class ShortestPathController {
 	
 	ShortestPath shortDistance =new ShortestPath();
 	@RequestMapping(value="/distance" ,method=RequestMethod.POST,produces = { "application/json" })
-	public Path  input(@RequestBody Path distance) throws Exception {
+	public Request  input(@RequestBody Request distance) throws Exception {
 		distance.setOutput(shortDistance.calculate(distance.getNodes(),distance.getFilepath()));
 		saveRequestDetails(distance);
 		return distance;
@@ -33,9 +33,9 @@ public class ShortestPathController {
 	}
 	
 	
-	public void saveRequestDetails(Path request) throws Exception{
+	public void saveRequestDetails(Request request) throws Exception{
 		try{
-		Path returnVal=requestRepo.save(request);
+		Request returnVal=requestRepo.save(request);
 		}catch(MongoException e){
 			throw new Exception("Unable to save request details");
 		}
@@ -43,9 +43,9 @@ public class ShortestPathController {
 	}
 	
 	@GetMapping(value = "/findAll")
-	public List<Path> getRequestDetails() throws Exception {
+	public List<Request> getRequestDetails() throws Exception {
 		try{
-			List<Path> result =requestRepo.findAll();
+			List<Request> result =requestRepo.findAll();
 			return result;
 			}
 			catch(MongoException e){
