@@ -6,8 +6,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import com.distance.ShortestPath;
 import com.distance.controller.ShortestPathController;
+import com.distance.service.ShortestPath;
 
 public class ShortestPathTest {
 	ShortestPathController sc;

@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   td,  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  </style>
 </head>
 <body ng-app="ShortestPathApp" ng-controller="ShortestPathController" style="background:#F4F4F4;font-family: Gravur;margin:0 auto;background-image: url('./bg.png');background-repeat: no-repeat;">
 <div><center><h1>Shortest Path Calculator</h1></center></div>
@@ -23,16 +29,29 @@
       <textarea rows="5" cols="30"  ng-model="distance.filepath" class="form-control"></textarea>
     </div>
 	<div align="center">
-	<button ng-click="cal()" type="button" class="btn btn-primary">Find Route</button>
+	<button ng-click="cal()" type="button" class="btn btn-default">Calculate Shortest Path</button>
 	</div>
 </div>
 
- <div class="col-md-offset-1 col-md-3">
+ <div class="col-md-offset-1 ">
   
     <div class="form-group">
     Result: {{output}}
     </div>
-	
+	<div>
+	<table style="border: 1px solid #ddd">
+	<thead>
+	<th style="width:19%"><center>No Of Cities</center></th>
+	<th style="width:25%"><center>Route Map Location</center></th>
+	<th style="width:60%"><center>Output</center></th>
+	</thead>
+  <tr ng-repeat="x in outputTable">
+    <td style="width:15%"><center>{{ x.nodes }}</center></td>
+    <td style="width:25%"><center>{{ x.filepath}}</center></td>
+    <td style="width:60%"><center>{{ x.output }}</center></td>
+  </tr>
+</table>
+	</div>
 </div>
 
 
