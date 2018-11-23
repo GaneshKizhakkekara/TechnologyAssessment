@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class ShortestPath {
 
     // Global Variables
-    private static int[][] distances;
-    private static int finalResults[];
-    private static String paths[];
-    private static int counter = 0;
+    private  int[][] distances;
+    private  int finalResults[];
+    private  String paths[];
+    private  int counter = 0;
 
 
     // Main Function
@@ -86,7 +86,7 @@ public class ShortestPath {
 
     /* ------------------------------- RECURSIVE FUNCTION ---------------------------- */
 
-    private static int procedure(int initial, int vertices[], String path, int costUntilHere) {
+    private int procedure(int initial, int vertices[], String path, int costUntilHere) {
 
         // We concatenate the current path and the vertex taken as initial
         path = path + Integer.toString(initial) + " - ";
