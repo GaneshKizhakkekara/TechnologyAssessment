@@ -17,7 +17,7 @@ import com.mongodb.MongoException;
 
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/shortestpath")
 public class ShortestPathController {
 	
 	@Autowired
