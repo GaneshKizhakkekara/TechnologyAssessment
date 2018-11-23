@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Validated
 @Document
-public class Path {
+public class Request {
 	
 
 	@Id
