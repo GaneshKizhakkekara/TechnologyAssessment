@@ -12,5 +12,16 @@ app.controller("ShortestPathController", function($scope,$ngBootbox,$http,$windo
 		  
 
       };
+		  
+		  $http.get("http://localhost:8085/v1/findAll")
+          .success(function (response){   
+        	  console.log(response);
+        	  $scope.outputTable=response;
+          })
+          .error(function (response){
+          });
+		  
+
+     
 });
 
