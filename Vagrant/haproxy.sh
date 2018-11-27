@@ -6,5 +6,4 @@ yum -y install haproxy
 
 echo "Installed Haproxy"
 
-
 exit
