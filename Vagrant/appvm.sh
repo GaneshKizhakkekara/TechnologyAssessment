@@ -59,7 +59,7 @@ yum -y install telnet
 sleep 10
 
 #Ensure to clear the existing files from the Clone Path
-echo "Clear the existing files from the Vignesh_Assessment"
+echo "Clear the existing files from the Ganesh_ShortestPath"
 sleep 2
 
 echo "Path in which the Master Branch will be Cloned is $cloning_path"
@@ -73,7 +73,7 @@ mkdir -p $cloning_path
 sleep 2
 
 #Clone the GIT Repo to your Clone Path
-echo "Started git Clone with HPSE Assessment"
+echo "Started git Clone with TechnologyAssessment"
 
 cd $cloning_path
 sleep 2
@@ -107,7 +107,7 @@ docker build -t $dockerimage_name$version .
 
 sleep 10
 
-echo "Running the Docker Image and making Services Up - You can aceess the application with http://your_vm_ip:8888/HPSE"
+echo "Running the Docker Image and making Services Up - You can aceess the application with http://your_vm_ip:8888/shortestPath"
 
 sleep 2
 nohup docker run -i --rm -p 8888:8080 $dockerimage_name$version &
